@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Anjali ❤️ Arpit</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    min-height:100vh;
+    overflow:hidden;
+    background:
+        radial-gradient(circle at 20% 20%,#ffb3cf55,transparent 30%),
+        radial-gradient(circle at 80% 80%,#c77dff55,transparent 30%),
+        linear-gradient(135deg,#18051d,#4b123c,#8e245b);
+    color:white;
+    font-family:'Poppins',sans-serif;
+}
+
+/* ================= BACKGROUND ================= */
+
+.bg-heart{
+    position:fixed;
+    bottom:-50px;
+    pointer-events:none;
+    z-index:1;
+    animation:floatUp linear forwards;
+}
+
+@keyframes floatUp{
+    0%{
+        transform:translateY(0) scale(.5) rotate(0);
+        opacity:0;
+    }
+    15%{opacity:.8}
+    100%{
+        transform:translateY(-115vh) scale(1.2) rotate(360deg);
+        opacity:0;
+    }
+}
+
+.star{
+    position:fixed;
+    color:#fff;
+    z-index:1;
+    animation:twinkle 2s infinite alternate;
+}
+
+@keyframes twinkle{
+    from{opacity:.15;transform:scale(.5)}
+    to{opacity:1;transform:scale(1.2)}
+}
+
+/* ================= MAIN ================= */
+
+.container{
+    width:100%;
+    height:100vh;
+    position:relative;
+    z-index:5;
+}
+
+.step{
+    position:absolute;
+    inset:0;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:25px;
+    opacity:0;
+    visibility:hidden;
+    transform:translateX(60px) scale(.96);
+    transition:.7s ease;
+}
+
+.step.active{
+    opacity:1;
+    visibility:visible;
+    transform:translateX(0) scale(1);
+}
+
+.card{
+    width:100%;
+    max-width:430px;
+    text-align:center;
+    padding:38px 25px;
+    border-radius:32px;
+
+    background:rgba(255,255,255,.09);
+    border:1px solid rgba(255,255,255,.22);
+    backdrop-filter:blur(18px);
+
+    box-shadow:
+        0 25px 80px rgba(0,0,0,.35),
+        inset 0 0 30px rgba(255,255,255,.04);
+}
+
+/* ================= TEXT ================= */
+
+.small{
+    font-size:13px;
+    opacity:.7;
+    letter-spacing:2px;
+    text-transform:uppercase;
+}
+
+h1{
+    font-family:'Pacifico',cursive;
+    font-size:38px;
+    margin:15px 0;
+    text-shadow:0 0 25px #ff8fbc;
+}
+
+h2{
+    font-size:27px;
+    margin:15px 0;
+}
+
+p{
+    line-height:1.8;
+    font-size:15px;
+    opacity:.94;
+}
+
+.big{
+    font-size:75px;
+    display:inline-block;
+    animation:heartbeat 1.3s infinite;
+}
+
+@keyframes heartbeat{
+    0%,100%{transform:scale(1)}
+    50%{transform:scale(1.17)}
+}
+
+/* ================= BUTTON ================= */
+
+.next{
+    margin-top:28px;
+    padding:13px 30px;
+    border:0;
+    border-radius:50px;
+
+    background:linear-gradient(135deg,#fff,#ffd8e8);
+    color:#9d255d;
+
+    font-weight:700;
+    font-size:14px;
+    cursor:pointer;
+
+    box-shadow:0 8px 25px #0004;
+    transition:.3s;
+}
+
+.next:hover{
+    transform:translateY(-3px) scale(1.03);
+}
+
+.next:active{
+    transform:scale(.92);
+}
+
+/* ================= STEP 2 ================= */
+
+.names{
+    font-family:'Pacifico',cursive;
+    font-size:39px;
+    background:linear-gradient(90deg,#fff,#ff9fc5,#fff);
+    background-size:200%;
+    -webkit-background-clip:text;
+    color:transparent;
+    animation:gradient 3s infinite;
+}
+
+@keyframes gradient{
+    50%{background-position:100%}
+}
+
+.infinity{
+    font-size:50px;
+    margin:10px;
+}
+
+/* ================= STEP 3 ================= */
+
+.question{
+    font-size:23px;
+    font-weight:600;
+    margin:20px 0;
+}
+
+/* ================= STEP 4 ================= */
+
+.month{
+    font-size:72px;
+    font-weight:800;
+    background:linear-gradient(#fff,#ff9fc5);
+    -webkit-background-clip:text;
+    color:transparent;
+}
+
+.monthText{
+    font-size:18px;
+}
+
+/* ================= STEP 5 ================= */
+
+.memory{
+    margin:12px 0;
+    padding:14px;
+    border-radius:18px;
+    background:#ffffff0d;
+    border:1px solid #ffffff18;
+    transition:.3s;
+}
+
+.memory:hover{
+    transform:scale(1.03);
+}
+
+/* ================= STEP 6 ================= */
+
+.letter{
+    text-align:left;
+    padding:20px;
+    border-radius:20px;
+    background:#ffffff0b;
+    border-left:3px solid #ff9fc5;
+    line-height:1.8;
+    font-size:14px;
+}
+
+/* ================= STEP 7 ================= */
+
+.reason{
+    margin:8px 0;
+    padding:11px;
+    border-radius:14px;
+    background:#ffffff0b;
+}
+
+/* ================= STEP 8 ================= */
+
+.yes{
+    font-size:50px;
+    margin:15px;
+    animation:heartbeat 1.1s infinite;
+}
+
+/* ================= STEP 9 ================= */
+
+.count{
+    font-size:80px;
+    font-weight:800;
+    text-shadow:0 0 30px #ff79aa;
+}
+
+/* ================= FINAL ================= */
+
+.final-heart{
+    font-size:100px;
+    animation:finalHeart 1s infinite;
+}
+
+@keyframes finalHeart{
+    0%,100%{transform:scale(1)}
+    50%{
+        transform:scale(1.25);
+        filter:drop-shadow(0 0 30px #ff6fa8);
+    }
+}
+
+.surprise{
+    display:none;
+    animation:surpriseIn 1s ease;
+}
+
+@keyframes surpriseIn{
+    from{
+        opacity:0;
+        transform:scale(.4) rotate(-5deg);
+    }
+    to{
+        opacity:1;
+        transform:scale(1) rotate(0);
+    }
+}
+
+.final-title{
+    font-family:'Pacifico',cursive;
+    font-size:35px;
+    margin:15px 0;
+}
+
+.final-message{
+    font-size:16px;
+    line-height:1.9;
+}
+
+/* ================= PROGRESS ================= */
+
+.progress{
+    position:fixed;
+    top:18px;
+    left:50%;
+    transform:translateX(-50%);
+    width:180px;
+    height:4px;
+    background:#ffffff25;
+    border-radius:10px;
+    z-index:20;
+}
+
+.bar{
+    height:100%;
+    width:10%;
+    background:#fff;
+    border-radius:10px;
+    transition:.5s;
+}
+</style>
+</head>
+
+<body>
+
+<div class="progress">
+    <div class="bar" id="bar"></div>
+</div>
+
+<div class="container">
+
+<!-- ================= STEP 1 ================= -->
+
+<section class="step active">
+<div class="card">
+
+    <div class="big">💗</div>
+
+    <div class="small">A little something for you...</div>
+
+    <h1>Hey Anjali...</h1>
+
+    <p>
+        I made this tiny little journey<br>
+        just for you. 🥹
+    </p>
+
+    <button class="next" onclick="nextStep()">
+        Open It 💌
+    </button>
+
+</div>
+</section>
+
+
+<!-- ================= STEP 2 ================= -->
+
+<section class="step">
+<div class="card">
+
+    <div class="small">Chapter 01</div>
+
+    <div class="names">
+        Anjali
+        <br>
+        ❤️
+        <br>
+        Arpit
+    </div>
+
+    <div class="infinity">∞</div>
+
+    <p>
+        Two names.<br>
+        One beautiful story. 🫂
+    </p>
+
+    <button class="next" onclick="nextStep()">
+        Continue ✨
+    </button>
+
+</div>
+</section>
+
+
+<!-- ================= STEP 3 ================= -->
+
+<section class="step">
+<div class="card">
+
+    <div class="big">🥹</div>
+
+    <div class="small">Chapter 02</div>
+
+    <div class="question">
+        Do you know something?
+    </div>
+
+    <p>
+        Out of all the people in this world,
+        somehow our paths crossed...
+        and I'm really glad they did. ❤️
+    </p>
+
+    <button class="next" onclick="nextStep()">
+        Tell Me More 🥺
+    </button>
+
+</div>
+</section>
+
+
+<!-- ================= STEP 4 ================= -->
+
+<section class="step">
+<div class="card">
+
+    <div class="small">Chapter 03</div>
+
+    <div class="month">7</div>
+
+    <div class="monthText">
+        MONTHS TOGETHER ❤️
+    </div>
+
+    <p style="margin-top:20px">
+        7 months of conversations,<br>
+        smiles, memories, little fights,<br>
+        silly moments and lots of love. 🫂
+    </p>
+
+    <button class="next" onclick="nextStep()">
+        Our Memories 📸
+    </button>
+
+</div>
+</section>
+
+
+<!-- ================= STEP 5 ================= -->
+
+<section class="step">
+<div class="card">
+
+    <div class="small">Chapter 04</div>
+
+    <h2>Little Things ✨</h2>
+
+    <div class="memory">💬 Our random conversations</div>
+    <div class="memory">😂 Our silly moments</div>
+    <div class="memory">🥺 Those emotional talks</div>
+    <div class="memory">🫂 The comfort we give each other</div>
+    <div class="memory">❤️ Every little moment together</div>
+
+    <button class="next" onclick="nextStep()">
+        One More Thing 💌
+    </button>
+
+</div>
+</section>
+
+
+<!-- ================= STEP 6 ================= -->
+
+<section class="step">
+<div class="card">
+
+    <div class="small">Chapter 05</div>
+
+    <h2>A Little Letter 💌</h2>
+
+    <div class="letter">
+
+        Anjali... ❤️<br><br>
+
+        I don't know if words can ever explain
+        how special these 7 months have been.
+
+        <br><br>
+
+        Thank you for every smile,
+        every conversation,
+        every little moment and
+        simply for being you.
+
+        <br><br>
+
+        Whatever happens tomorrow,
+        I'll always be grateful that
+        our story happened. 🫂
+
+    </div>
+
+    <button class="next" onclick="nextStep()">
+        Keep Going ❤️
+    </button>
+
+</div>
+</section>
+
+
+<!-- ================= STEP 7 ================= -->
+
+<section class="step">
+<div class="card">
+
+    <div class="small">Chapter 06</div>
+
+    <h2>Why You? 🥹</h2>
+
+    <div class="reason">🌸 Because you make ordinary moments special.</div>
+    <div class="reason">💗 Because your presence feels different.</div>
+    <div class="reason">🫂 Because with you, I can just be myself.</div>
+    <div class="reason">✨ Because our story is ours.</div>
+
+    <button class="next" onclick="nextStep()">
+        And Now... 👀
+    </button>
+
+</div>
+</section>
+
+
+<!-- ================= STEP 8 ================= -->
+
+<section class="step">
+<div class="card">
+
+    <div class="small">Chapter 07</div>
+
+    <div class="yes">💍</div>
+
+    <h2>One Little Question...</h2>
+
+    <p>
+        7 months are already a beautiful memory...
+        <br><br>
+        But what if this is only
+        the beginning of many more chapters? ❤️
+    </p>
+
+    <button class="next" onclick="nextStep()">
+        Next Chapter ♾️
+    </button>
+
+</div>
+</section>
+
+
+<!-- ================= STEP 9 ================= -->
+
+<section class="step">
+<div class="card">
+
+    <div class="small">Almost There...</div>
+
+    <h2>Your Surprise Is Coming</h2>
+
+    <div class="count" id="count">
+        3
+    </div>
+
+    <p>
+        Keep your heart ready... 💗
+    </p>
+
+</div>
+</section>
+
+
+<!-- ================= STEP 10 FINAL ================= -->
+
+<section class="step">
+<div class="card">
+
+    <div class="surprise" id="surprise">
+
+        <div class="final-heart">❤️</div>
+
+        <div class="final-title">
+            Happy 7 Months
+        </div>
+
+        <div class="names">
+            Anjali & Arpit
+        </div>
+
+        <p class="final-message">
+
+            🥹❤️<br><br>
+
+            7 months down...<br>
+            countless beautiful moments behind us...
+            <br><br>
+
+            and hopefully many more beautiful
+            chapters waiting ahead. 🫂✨
+
+            <br><br>
+
+            Thank you for being a part
+            of this little story. 💗
+
+            <br><br>
+
+            <b>
+                Happy 7 Months Anniversary,
+                Anjali ❤️
+            </b>
+
+            <br><br>
+
+            🫶🏻 Always Special 🫶🏻
+
+        </p>
+
+    </div>
+
+</div>
+</section>
+
+</div>
+
+
+<script>
+
+/* ================= STEP SYSTEM ================= */
+
+let currentStep = 0;
+
+const steps =
+document.querySelectorAll(".step");
+
+const bar =
+document.getElementById("bar");
+
+
+function nextStep(){
+
+    if(currentStep >= steps.length-1)
+        return;
+
+    steps[currentStep].classList.remove("active");
+
+    currentStep++;
+
+    steps[currentStep].classList.add("active");
+
+    let percent =
+        ((currentStep+1)/steps.length)*100;
+
+    bar.style.width = percent+"%";
+
+
+    /* Start countdown when Step 9 appears */
+
+    if(currentStep === 8){
+        startCountdown();
+    }
+
+
+    /* Show final surprise */
+
+    if(currentStep === 9){
+
+        setTimeout(()=>{
+
+            document.getElementById("surprise")
+            .style.display="block";
+
+            heartExplosion();
+
+        },500);
+
+    }
+}
+
+
+/* ================= COUNTDOWN ================= */
+
+function startCountdown(){
+
+    let number = 3;
+
+    const count =
+    document.getElementById("count");
+
+    count.innerText=number;
+
+    const timer =
+    setInterval(()=>{
+
+        number--;
+
+        if(number > 0){
+
+            count.innerText=number;
+
+        }else{
+
+            count.innerText="❤️";
+
+            clearInterval(timer);
+
+            setTimeout(nextStep,1000);
+        }
+
+    },1000);
+}
+
+
+/* ================= FLOATING HEARTS ================= */
+
+function createHeart(){
+
+    const heart =
+    document.createElement("div");
+
+    heart.className="bg-heart";
+
+    const emojis=[
+        "❤️","💗","💖","💕",
+        "💞","💘","🫂","✨"
+    ];
+
+    heart.innerHTML =
+    emojis[Math.floor(Math.random()*emojis.length)];
+
+    heart.style.left =
+    Math.random()*100+"vw";
+
+    heart.style.fontSize =
+    (15+Math.random()*30)+"px";
+
+    heart.style.animationDuration =
+    (5+Math.random()*6)+"s";
+
+    document.body.appendChild(heart);
+
+    setTimeout(()=>{
+        heart.remove();
+    },12000);
+}
+
+setInterval(createHeart,500);
+
+
+/* ================= HEART EXPLOSION ================= */
+
+function heartExplosion(){
+
+    for(let i=0;i<60;i++){
+
+        setTimeout(()=>{
+            createHeart();
+        },i*35);
+
+    }
+}
+
+
+/* ================= STARS ================= */
+
+for(let i=0;i<35;i++){
+
+    const star =
+    document.createElement("div");
+
+    star.className="star";
+
+    star.innerHTML="✦";
+
+    star.style.left =
+    Math.random()*100+"vw";
+
+    star.style.top =
+    Math.random()*100+"vh";
+
+    star.style.fontSize =
+    (6+Math.random()*12)+"px";
+
+    star.style.animationDelay =
+    Math.random()*3+"s";
+
+    document.body.appendChild(star);
+}
+
+</script>
+
+</body>
+</html>
